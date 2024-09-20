@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Falling and Spinning Triangles</title>
+    <style>
+        /* Keyframes for falling animation */
+        @keyframes fall {
+            0% { transform: translateY(0) rotate(0deg); }
+            100% { transform: translateY(100vh) rotate(360deg); } /* Fall to the bottom and spin */
+        }
+
+        /* Style for the triangles */
+        .triangle {
+            width: 0;
+            height: 0;
+            border-left: 15px solid transparent;
+            border-right: 15px solid transparent;
+            border-bottom: 25px solid #228B22; /* Color of the triangle */
+            position: absolute; /* Allow triangles to be positioned absolutely */
+            animation: fall 4s linear forwards; /* Apply both falling and spinning animation */
+        }
+    </style>
+</head>
+<body>
+<div id="triangle-container"></div> <!-- Container where triangles will be added -->
+
+<script>
+    // Function to generate a random number within a given range
+    function getRandomInt(min, max) {
+        return Math.floor(Math.random() * (max - min + 1)) + min;
+    }
+
+    // Function to create and add a single triangle at a random position
+    function addTriangle() {
+        // Create a new div element for the triangle
+        var triangle = document.createElement("div");
+
+        // Add the triangle class to apply styles
+        triangle.className = "triangle";
+
+        // Set a random horizontal position (between 0 and 100% of the viewport width)
+        let randomLeft = getRandomInt(0, 100);
+        triangle.style.left = randomLeft + "vw"; // Set the random left position
+
+        // Append the triangle to the container
+        document.getElementById("triangle-container").appendChild(triangle);
+
+        // Add an event listener to remove the triangle when the animation ends
+        triangle.addEventListener('animationend', function() {
+            triangle.remove(); // Remove the triangle from the DOM
+        });
+    }
+
+    // Function to continuously add triangles at random intervals
+    function startAddingTriangles() {
+        setInterval(function() {
+            // Generate a random delay (between 500ms and 2000ms)
+            let randomDelay = getRandomInt(200, 700);
+
+            // Use setTimeout to add a triangle after the random delay
+            setTimeout(function() {
+                addTriangle();
+            }, randomDelay);
+        }, 500); // Call setInterval every 500ms to check when to add a triangle
+    }
+
+    // Start adding triangles when the page loads
+    window.onload = function() {
+        startAddingTriangles(); // Start adding triangles continuously
+    };
+</script>
+
+</body>
+</html>

@@ -1,0 +1,60 @@
+/* Use Flexbox to center the card in the body */
+body {
+    display: flex;
+    justify-content: center;  /* Center horizontally */
+    align-items: center;      /* Center vertically */
+    height: 100vh;            /* Full viewport height */
+    margin: 0;                /* Remove default body margin */
+    background-color: #f0f0f0; /* Optional background color */
+}
+
+/* Style the card */
+.card {
+    width: 200px;
+    height: 300px;
+    perspective: 1000px;      /* Adds perspective for the 3D effect */
+}
+
+/* Inner card setup for 3D flip */
+.inner-card {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    background-color: transparent;
+    transition: transform 0.8s;
+    transform-style: preserve-3d; /* Allows 3D transformations */
+}
+
+/* Hover effect to flip the card */
+.card:hover .inner-card {
+    transform: rotateY(180deg); /* Rotates card to show the back */
+}
+
+/* Shared styling for front and back faces */
+.front, .back {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;  /* Center horizontally */
+    align-items: center;      /* Center vertically */
+    font-family: Arial, sans-serif;
+    font-size: 24px;
+    color: white;
+    border-radius: 10px;
+    -webkit-backface-visibility: hidden; /* Safari */
+    backface-visibility: hidden; /* Hide the back face when not flipped */
+}
+
+/* Front face style */
+.front {
+    background-color: #00b3ff; /* Blue color */
+}
+
+/* Back face style */
+.back {
+    background-color: #28a752; /* Green color */
+    transform: rotateY(180deg); /* Start with back face rotated */
+}
