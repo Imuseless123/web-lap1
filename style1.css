@@ -12,7 +12,7 @@ body{
 }
 
 .function-section{
-    height: 20%;
+    height: 14%;
     width: 100%;
 }
 
@@ -35,7 +35,7 @@ body{
         width: 20px;
     }
     .vl{
-        border-left: 2px solid rgb(68, 75, 68);
+        border-left: 2px solid rgb(227, 228, 229);
         height: 80%;
         margin: 0px 5px;
         /* width: 1px; */
@@ -61,24 +61,24 @@ body{
 }
 
 .function-bar{
-    background-color: aqua;
+    background-color: #f5f6f7;
     display: flex;
     align-items: center; 
     height: 100%;
 
     .clipboard-section, .image-section, .tools-section, .brushes-section, .shapes-section, .size-section, .color-section, .threeD-section{
-        height: 100%;
+        padding-top: 20px;
         margin: 5px;
         display: flex;
         align-items: center; 
         justify-content: center;
     }
 
-    .clipboard-section, .image-section, .tools-section, .color-section, .shapes-section{
+    .clipboard-section,.brushes-section, .image-section, .tools-section, .color-section, .shapes-section,.threeD-section,.size-section{
         display: flex;
         flex-direction: column;
         .des{
-            background-color: antiquewhite;
+           
             display: flex;
             /* justify-content: space-between; */
             justify-content: center;
@@ -97,7 +97,6 @@ body{
             width: 100%;
 
             .paste-container, .cut-copy-container{
-                height: auto;
                 width: 50%;
             }
 
@@ -107,7 +106,7 @@ body{
                     display: flex;
                     justify-content: center;
                     align-items: center;
-                    height: 50%;
+                    height: 40px;
                     img{
                         margin: 0px 5px;
                         height: 40px;
@@ -129,7 +128,6 @@ body{
                 }
             }
             .cut-copy-container{
-                padding-top: 13px;
                 .cut, .copy{
                     width: 100%;
                     height: 25px;
@@ -156,7 +154,7 @@ body{
             width: 100%;
 
             .image-container, .cut-copy-container{
-                height: auto;
+                height: 40px;
                 width: 50%;
             }
 
@@ -166,7 +164,7 @@ body{
                     display: flex;
                     justify-content: center;
                     align-items: center;
-                    height: 50%;
+                    height: 40px;;
                     img{
                         margin: 0px 5px;
                         height: 40px;
@@ -189,7 +187,6 @@ body{
             }
 
             .option-container{
-                padding-top: 13px;
                 ._crop, ._resize, ._rotate{
                     width: 100%;
                     height: 25px;
@@ -219,7 +216,7 @@ body{
                 display: flex;
                 justify-content: center;
                 align-items: center;
-                margin: 10px;
+                margin: 8px;
                 img{
                     margin: 0px 10px;
                     height: 20px;
@@ -237,11 +234,12 @@ body{
                 display: flex;
                 justify-content: center;
                 align-items: center;
-                height: 50%;
+                height: 40px;
                 img{
                     margin: 0px 5px;
                     height: 40px;
                     width: 40px;
+                    
                 }
             }
 
@@ -261,7 +259,8 @@ body{
     }
 
     .shapes-section{
-        width: 170px;
+        width: 280px;
+        display: flex; /* Use Flexbox to center the content */
     }
 
     .size-section{
@@ -269,7 +268,7 @@ body{
     }
 
     .color-section{
-        width: 340px;
+        width: 380px;
     }
 
     .threeD-section{
@@ -277,7 +276,7 @@ body{
     }
 
     .vl{
-        border-left: 2px solid rgb(68, 75, 68);
+        border-left: 2px solid rgb(227, 228, 229);
         height: 80%;
         margin: 0px 5px;
         /* width: 1px; */
@@ -287,4 +286,199 @@ body{
 .working-section{
     display: flex;
     width: 100%;
+}
+
+/* Shapes-section */
+.shapes-function {
+    display: flex;
+    justify-content: flex-start;
+}
+.shapes-container{
+    height: 100%;
+    width: 100%;
+    display: flex; /* Use Flexbox to center the content */
+    justify-content: flex-start; /* Center content horizontally */
+    align-items: start; /* Center content vertically */
+}
+.shapes-icon-grid {
+    background-color: #fafbfc;
+    border: 1px solid #e3e4e5;
+
+    display: grid;
+    grid-template-columns: repeat(7, 1fr); /* 7 columns */
+    gap: 4px; /* Adjust the space between icons */
+    width: fit-content; /* Make the container fit the icons */
+    margin: 0 auto; /* Center the grid */
+}
+.shapes-icon-grid img {
+    width: 20px; /* Adjust based on desired icon size */
+    height: 20px;
+    object-fit: contain; /* Ensure the image fits without distortion */
+}
+.shapes-button-group {
+    border: 1px solid #e3e4e5;
+    display: flex;
+    flex-direction: column; /* Stack buttons vertically */
+    justify-content: space-between;
+}
+
+.shapes-button-group button {
+    width: 20px;
+    height: 33%;
+    display: flex; /* Use Flexbox to center the content */
+    justify-content: center; /* Center content horizontally */
+    align-items: center; /* Center content vertically */
+    cursor: pointer;
+}
+.shapes-top-group {
+    margin-left: 4px;
+    display: flex;
+    flex-direction: column; /* Stack buttons vertically */
+    justify-content: flex-start;
+}
+.shapes-icon-label {
+    display: flex;
+    align-items: center; /* Align icon and label horizontally */
+    margin-bottom: 4px;
+}
+
+.shapes-icon-label img.side-icon {
+    width: 20px; /* Adjust icon size */
+    height: 20px;
+    margin-right: 5px; /* Space between icon and label */
+}
+
+.shapes-icon-label span {
+    font-size: 12px; /* Adjust label font size */
+}
+.shapes-icon-button {
+    display: flex;
+    align-items: center;
+    background-color: white;
+    border: 1px solid #ccc;
+    cursor: pointer;
+    font-size: 12px;
+}
+
+.shapes-icon-button:hover {
+    background-color: #f0f0f0;
+}
+
+.shapes-icon-button img.side-icon {
+
+    margin-right: 5px; /* Space between icon and label */
+}
+
+.shapes-icon-button span {
+    font-size: 12px; /* Adjust label font size */
+}
+
+/* Size */
+.size-container{
+    display: flex; /* Use Flexbox to center the content */
+    justify-content: flex-start; /* Center content horizontally */
+    align-items: start; /* Center content vertically */
+}
+.size-inner-container{
+    height: 100%; 
+    width: 100%;
+    display: flex; /* Use Flexbox to center the content */
+    justify-content: center; /* Center content horizontally */
+    align-items: center; /* Center content vertically */
+    flex-direction: column;
+}
+.size-icon {
+    width: 40px; /* Adjust icon size */
+    height: 40px;
+    object-fit: contain;
+}
+/* Color */
+
+.color-picker-container {
+    display: flex;
+    height: 100%;
+    width: 100%;
+    justify-content: flex-start; /* Center content horizontally */
+    align-items: start; /* Center content vertically */
+}
+
+.main-colors {
+    display: flex;
+    flex-direction: row;
+    gap: 10px;
+}
+
+.color-box {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 50px;
+    text-align: center;
+    transition: background-color 0.3s ease, border-color 0.3s ease; /* Smooth transition */
+}
+
+.color-box:hover {
+    background-color: lightblue; /* Light blue background on hover */
+    border-color: lightblue; /* Light blue border on hover */
+}
+
+
+
+.color-preview {
+    width: 40px;
+    height: 40px;
+    border: 1px solid black;
+}
+
+.color-swatches {
+    display: grid;
+    grid-template-columns: repeat(7, 20px);
+    gap: 5px;
+    margin-right: 10px;
+    margin-left: 10px;
+}
+
+.swatch {
+    width: 20px;
+    height: 20px;
+    border: 1px solid #ccc;
+    cursor: pointer;
+}
+
+.swatch:hover {
+    border-color: black;
+}
+
+.edit-colors {
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+    margin-left: 10px;
+}
+
+.edit-colors img {
+    width: 40px;
+    height: 40px;
+    cursor: pointer;
+}
+
+.edit-colors span {
+    font-size: 12px;
+}
+.color-preview-rainbow {
+    width: 40px;
+    height: 40px;
+    border: 1px solid black;
+    background: linear-gradient(to right, red, orange, yellow, green, blue, indigo, violet);
+}
+
+.no-border-button {
+    background: none;       /* No background */
+    border: none;           /* No border */  /* Add some padding for better appearance */
+    color: inherit;         /* Keep the text color from the parent element */
+    cursor: pointer;        /* Pointer cursor on hover */
+}
+
+.no-border-button:hover {
+    background-color: lightgray;  /* Optional: Add a hover effect */
 }
