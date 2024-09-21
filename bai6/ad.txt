@@ -1,0 +1,7 @@
+Hill cipher
+Hill cipher is a polygraphic substitution cipher based on linear algebra. Invented by Lester S. Hill in 1929, it was the first polygraphic cipher in which it was practical (though barely) to operate on more than three symbols at once. 
+
+The cipher uses an invertible square matrix (usually 2x2 or 3x3) as the encryption key. The matrix’s size determines how many letters are encrypted at a time (e.g., a 2x2 matrix works with letter pairs, while a 3x3 matrix works with triples of letters).
+Each letter in the message is represented by a number, usually A = 0, B = 1, ..., Z = 25.
+To encrypt a message, you break it into blocks (groups of letters), then multiply each block by the key matrix, and reduce the result modulo 26 to get the ciphertext.
+
