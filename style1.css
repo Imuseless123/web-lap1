@@ -112,6 +112,9 @@ body{
                         height: 40px;
                         width: 40px;
                     }
+                    img:hover{
+                        background-color: lightgray;
+                    }
                 }
 
                 .paste-text{
@@ -141,6 +144,10 @@ body{
                         width: 20px;
                     }
                 }
+
+                .cut:hover, .copy:hover{
+                    background-color: lightgray;
+                }
             }
         }
     }
@@ -169,6 +176,9 @@ body{
                         margin: 0px 5px;
                         height: 40px;
                         width: 40px;
+                    }
+                    img:hover{
+                        background-color: lightgray;
                     }
                 }
     
@@ -386,6 +396,10 @@ body{
     justify-content: center; /* Center content horizontally */
     align-items: center; /* Center content vertically */
     flex-direction: column;
+    .drop-down-arrow{
+        width: 100%;
+        text-align: center;
+    }
 }
 .size-icon {
     width: 40px; /* Adjust icon size */
@@ -479,6 +493,6 @@ body{
     cursor: pointer;        /* Pointer cursor on hover */
 }
 
-.no-border-button:hover {
+.no-border-button:hover,.drop-down-arrow:hover, .function-button:hover{
     background-color: lightgray;  /* Optional: Add a hover effect */
 }
